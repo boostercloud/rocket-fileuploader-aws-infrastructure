@@ -17,7 +17,6 @@ export type AWSS3EventsLambdaParams = {
 
 export class S3NotificationEventStoreStack {
   public static mountStack(params: AWSS3EventsLambdaParams, stack: Stack, config: BoosterConfig): void {
-
     const sourceBucket = new Bucket(stack, 'sourceUploadBucket' + params.entityTypeName, {
       bucketName: params.bucketName,
       removalPolicy: RemovalPolicy.DESTROY,
